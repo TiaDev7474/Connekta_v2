@@ -14,26 +14,45 @@
   -webkit-text-size-adjust: 100%;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+.light{
+    ---primaryColor: #f2f2f2;
+    ---primaryTextColor:#0000003e;
 }
-a:hover {
-  color: #535bf2;
+.dark{
+  ---primaryColor: #17171f;
+  ---primaryTextColor:#f2f2f2;
 }
+#root{
+    margin: 0;
+    padding: 0;
+}
+.app {
+    background-color: var(---primaryColor);
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  /* display: flex;
+  place-items: center; */
+  max-width: 100%;
   min-height: 100vh;
+  padding: 0;
 }
 
-h1 {
+.h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  color: var(---primaryTextColor);
+}
+h1,
+h2,
+h3{
+   margin: 0;
 }
 
 button {

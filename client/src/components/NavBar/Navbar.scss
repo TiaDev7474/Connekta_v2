@@ -1,0 +1,30 @@
+.nav {
+    height: 5vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin:0 2rem 0 2rem ;
+    padding: 1rem;
+   
+}
+.nav-logo{
+    font-size: 1.4rem;
+    color: var(---primaryTextColor);
+    font-family: monospace;
+    
+}
+.nav-link {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.nav-switch {
+    margin-right: 4rem;
+    padding-top: 0.4rem;
+}
+.nav-btn{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}

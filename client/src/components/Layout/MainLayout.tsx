@@ -6,6 +6,15 @@ type MainLayoutProps = {
 export const MainLayout = ({ children }: MainLayoutProps) => {
   return (
     <div>
+        <button className='button'>
+              Button 
+        </button>
+        <button className='button secondary'>
+              Button 
+        </button>
+        <h1 className='h1'>
+             Bienvenue sur connekta
+        </h1>
         { children }
     </div>
   )

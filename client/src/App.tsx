@@ -2,13 +2,16 @@ import { AppProvider } from "@/provider/app";
 import { AppRoutes } from "./routes"
 
 
+
 function AppRouter() {
- 
-  
+   
   return (
-      <AppProvider>
-           <AppRoutes />
-      </AppProvider>
+      <div>
+          <AppProvider>
+              <AppRoutes />
+          </AppProvider>
+      </div>
+      
   )
 }
 

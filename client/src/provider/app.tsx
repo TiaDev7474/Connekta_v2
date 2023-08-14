@@ -1,3 +1,5 @@
+
+import { ThemeProvider } from '@/context/context.theme'
 import React from 'react'
 import { ErrorBoundary } from 'react-error-boundary'
 import { BrowserRouter as Router } from 'react-router-dom'
@@ -11,6 +13,9 @@ type AppProviderProps = {
      children: React.ReactNode
 }
 export const AppProvider = ({ children } : AppProviderProps) => {
+   
+    
+
   return (
     <React.Suspense
         fallback={
@@ -18,9 +23,11 @@ export const AppProvider = ({ children } : AppProviderProps) => {
         }
     > 
         <ErrorBoundary FallbackComponent={ErrorFallback}>
-            <Router>
-                {children}
-            </Router>
+            <ThemeProvider>
+                <Router>
+                    {children}
+                </Router>
+            </ThemeProvider>
         </ErrorBoundary>
 
     </React.Suspense>

@@ -9,7 +9,8 @@ import { Button } from '@/Element/Button';
 import { SocialMediaLogin } from './SocialMediaLogin/SocialMediaLogin';
 interface IFormData {
     email:string,
-    password:string
+    password:string,
+    rememberMe:boolean
 }
 
 export const LoginForm = () => {

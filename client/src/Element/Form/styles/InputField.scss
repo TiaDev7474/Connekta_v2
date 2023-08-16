@@ -1,0 +1,39 @@
+.input-wrapper {
+     display: flex;
+     border: 1px solid var(---border-inputColor);
+     border-radius: 0.5rem;
+     -webkit-border-radius: 0.5rem;
+     -moz-border-radius: 0.5rem;
+     -ms-border-radius: 0.5rem;
+     -o-border-radius: 0.5rem;
+     justify-content: flex-start;
+     align-items: center;
+    //  width: 100%;
+     background-color: var(---bg-inputColor) ;
+     padding: 0.5rem;
+     line-height: 1.2;
+     
+     svg{
+        font-size: 1.5rem;
+        color: var(---primaryTextColor);
+     }
+    
+}
+.input{
+    flex-grow: 1;
+    padding:0.5rem ;
+    &::placeholder{
+         font-size: 0.9rem;
+         color: var(---placeholderColor)
+         
+    }
+    ;
+    border: none;
+    background-color:transparent  ;
+   
+    &:focus{
+        outline: none;
+    }
+   
+
+}

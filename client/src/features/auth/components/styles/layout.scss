@@ -1,0 +1,23 @@
+.layout-auth{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 25rem;
+    margin: 0 auto;
+    padding: 2rem;
+    margin-top: 5rem;
+    background: var(---primaryColor);
+    box-shadow: 0 4px 3px 0px rgba($color: #00000080, $alpha: 0.1);
+    border-radius:1rem ;
+    -webkit-border-radius:1rem ;
+    -moz-border-radius:1rem ;
+    -ms-border-radius:1rem ;
+    -o-border-radius:1rem ;
+}
+.title-auth{
+    align-self: flex-start;
+    font-size: 2rem;
+    color: var(---primaryTextColor);
+    margin-bottom:1.5rem ;
+}

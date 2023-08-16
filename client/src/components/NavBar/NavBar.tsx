@@ -6,15 +6,15 @@ export const NavBar = () => {
   return (
      <nav className='nav'>
          <div className='nav-logo'>
-              <h2>.Connekta</h2>
+              <h2>Connekta</h2>
          </div>
          <div className='nav-link'>
               <div className='nav-switch'>
                   <SwitchButton />
               </div>
               <div className='nav-btn'>
-                   <Button label='Sign Up' type='primary' />
-                   <Button label='Sign In' type='secondary' />
+                   <Button label='Register' type='primary' to="auth/register"/>
+                   <Button label='Login' type='secondary' to='auth/login' />
               </div>  
          </div> 
      </nav>

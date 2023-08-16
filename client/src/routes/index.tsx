@@ -6,7 +6,7 @@ import { useThemeContext } from "@/hooks/useThemeContext";
 
 export const AppRoutes = () => {
      const auth = {
-         user: true
+         user: false
      };
      const { currentTheme } = useThemeContext();
      

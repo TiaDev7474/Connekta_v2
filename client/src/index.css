@@ -18,7 +18,11 @@
     ---primaryColor: #f2f2f2;
     ---primaryTextColor:#020314;
     ---secondarColor:#5932e6;
-    ---tertiaryColor:#8632e6
+    ---tertiaryColor:#8632e6;
+    ---bg-inputColor:#ffffff;
+  ---border-inputColor:#5932e68f;
+  ---placeholderColor:#00000088;
+   
     
 }
 
@@ -28,7 +32,10 @@
   ---primaryColor:#0d042a;
   ---primaryTextColor:#f2f2f2;
   ---secondarColor:#5932e6;
-  ---tertiaryColor:#8632e6
+  ---tertiaryColor:#8632e6;
+  ---bg-inputColor:#02031474;
+  ---border-inputColor:#5932e68f;
+  ---placeholderColor:#f2f2f2c4;
 }
 #root{
     margin: 0;

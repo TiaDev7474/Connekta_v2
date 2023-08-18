@@ -3,7 +3,7 @@ import React from 'react'
 import './styles/InputField.scss'
 import {  MdVisibility } from 'react-icons/md'
 type InputFieldProps = {
-    type: 'text' |'password' |'email'|'checkbox',
+    type: 'text' |'password' |'email'|'checkbox' | 'numeric',
     name:string,
     placeholder?:string,
     // eslint-disable-next-line @typescript-eslint/no-explicit-any

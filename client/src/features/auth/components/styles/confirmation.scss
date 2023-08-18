@@ -1,0 +1,32 @@
+.layout-link{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    font-size: medium;
+    gap: 2rem;
+    color: var(---primaryTextColor);
+    
+}
+.link-back{
+    color: var(---primaryTextColor);
+    &:hover,
+    &:active{
+        color: var(---secondarColor);
+    }
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.separator{
+    width: 100%;
+    background: var(---separatorColor);
+    height: 1px;
+    margin-top: 1rem;
+    margin-bottom:1rem ;
+}
+.layout-action{
+    width: 100%;
+    display: flex;
+    gap: 2rem;
+
+}

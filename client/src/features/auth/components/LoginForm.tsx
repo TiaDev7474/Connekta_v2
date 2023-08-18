@@ -8,6 +8,7 @@ import './styles/LoginForm.scss'
 import { Button } from '@/Element/Button';
 
 
+
 interface IFormData {
     email:string,
     password:string,
@@ -61,7 +62,6 @@ export const LoginForm = () => {
                      <Button label='Login' type='primary'/>
                </div>  
           </form>
-         
       </React.Fragment>
       
   

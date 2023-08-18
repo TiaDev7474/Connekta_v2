@@ -2,10 +2,10 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  ---font-size-sm:1rem;
+  ---font-size-md:1.5rem;
+  ---font-size-lg:2rem;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -22,6 +22,8 @@
     ---bg-inputColor:#ffffff;
   ---border-inputColor:#5932e68f;
   ---placeholderColor:#00000088;
+  ---paragraphColor:rgba(0, 0, 0, 0.7);
+  ---separatorColor:#0000003a;
    
     
 }
@@ -36,6 +38,8 @@
   ---bg-inputColor:#02031474;
   ---border-inputColor:#5932e68f;
   ---placeholderColor:#f2f2f2c4;
+  ---paragraphColor:rgba(255, 255, 255, 0.356);
+  ---separatorColor:#f2f2f242;
 }
 #root{
     margin: 0;

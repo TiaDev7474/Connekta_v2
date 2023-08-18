@@ -7,6 +7,7 @@ type ButtonPros = {
     type?:string,
     Icon?: React.ReactNode,
     to?: To,
+    className?:string
 
 }
 export const Button: React.FC<ButtonPros> = ({ label , Icon = "", type ,to=''}) => {
@@ -22,7 +23,6 @@ export const Button: React.FC<ButtonPros> = ({ label , Icon = "", type ,to=''}) 
       { label }
          {Icon }
       </Link>
-       
     </button>
   )
 }

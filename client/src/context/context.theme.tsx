@@ -16,7 +16,7 @@ export const themeContext = createContext<ThemeContextType>({} as ThemeContextTy
 
 
 export const ThemeProvider:React.FC<ThemeProviderProps> = ({ children }) => {
-    const [currentTheme , setTheme] = useState<themeType>("light");
+    const [currentTheme , setTheme] = useState<themeType>("dark");
     const toggleTheme = useCallback(() => {
             if(currentTheme === 'light'){
                 setTheme("dark")

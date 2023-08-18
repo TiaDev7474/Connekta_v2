@@ -7,9 +7,10 @@
     font-family: inherit;
     cursor: pointer;
     transition: border-color 0.25s;
-    color: #f2f2f2;
+   
     opacity: 0.9;
     width: 100%;
+    color: (---secondarColor);
     &:hover{
         opacity: 1;
     }
@@ -18,8 +19,11 @@
         background-color: var(---secondarColor);
     }
     &-secondary{
-        border: 1px solid var(---secondarColor) ;
+        border: 1px solid var(---secondarColor);
         background-color: var(---primaryColor);
+        a{
+            color: var(---secondarColor);
+        }
     }
 
     

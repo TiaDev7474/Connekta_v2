@@ -1,11 +1,15 @@
 import React from 'react';
-import { useFormik } from 'formik';
+import {  useFormik } from 'formik';
 import * as Yup from 'yup';
 import { WrapperField } from '@/Element/Form/WrapperField';
 import { InputField } from '@/Element/Form/InputField';
 import { MdEmail, MdLock } from 'react-icons/md';
 import './styles/LoginForm.scss'
-import { Button } from '@/Element/Button';
+import { ActionButton } from '@/Element/Button/ActionButton';
+import { useLogin } from '@/hooks/useLogin';
+import { LoginResponse } from "@/features/auth/types/apiResponse"
+
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -16,38 +20,56 @@ interface IFormData {
 }
 
 export const LoginForm = () => {
-  const forrmik = useFormik({
-       initialValues:{
-           email:'',
-           password:'',
-           rememberMe: false
-       },
-       validationSchema: Yup.object({
-            email:Yup.string().email('Please a valid email address to log in'),
-            password:Yup.string().required('Password is required to log in')
-       }),
-       onSubmit: async(values:IFormData) => {
-             console.log(values)
-       }
-  })        
+     const { mutate:loginUser, isLoading, isError , error} = useLogin();
+     const navigate = useNavigate()
+     const formik = useFormik({
+          initialValues:{
+               email:'',
+               password:'',
+               rememberMe: false
+          },
+          validationSchema: Yup.object({
+               email:Yup.string().email('Please enter valid email address to log in'),
+               password:Yup.string().required('Password is required to log in')
+          }),
+          onSubmit: async(values:IFormData) => {
+               console.log(values);
+               loginUser(values,{
+                    onSuccess:(response) =>{
+                         console.log(response)
+                    
+                         // if(response.token){
+                         //      navigate("/user")
+                         // }
+                    }
+               })
+          }
+          
+     })      
+    
   return (
      <React.Fragment>
-          <form className='form'>
-               <WrapperField name="email" formik={forrmik} >
+          {
+               isError && (
+                    <span>{error.message}</span>
+               )
+          }
+          <form className='form' onSubmit={formik.handleSubmit}>
+               <WrapperField name="email" formik={formik} >
                     <InputField  
                          type='email' 
                          placeholder='Enter your email address'
                          name='email'
-                         formik={forrmik}
+                         formik={formik}
                          Icon={<MdEmail/>}
                     />
                </WrapperField>
-               <WrapperField name="password" formik={forrmik} >
+               <WrapperField name="password" formik={formik} >
                     <InputField  
                          type='password' 
                          placeholder='Enter your password '
                          name='password'
-                         formik={forrmik}
+                         formik={formik}
                          Icon={<MdLock />}
                     />
 
@@ -56,10 +78,10 @@ export const LoginForm = () => {
                     type='checkbox' 
                     name='rememberMe'
                     label='Remember me'
-                    formik={forrmik}
+                    formik={formik}
                />
                <div className='form-action'>
-                     <Button label='Login' type='primary'/>
+                     <ActionButton label='Login' type='primary' state={isLoading}/>
                </div>  
           </form>
       </React.Fragment>

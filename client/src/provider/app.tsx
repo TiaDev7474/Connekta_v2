@@ -1,9 +1,10 @@
 
-import { ThemeProvider } from '@/context/context.theme'
-import React from 'react'
-import { ErrorBoundary } from 'react-error-boundary'
-import { BrowserRouter as Router } from 'react-router-dom'
-
+import { ThemeProvider } from '@/context/context.theme';
+import React from 'react';
+import { ErrorBoundary } from 'react-error-boundary';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { queryClient } from '@/lib/react-query';
+import { QueryClientProvider } from 'react-query';
 const ErrorFallback = () => {
     return (
          <div>Fallback error goes here</div>
@@ -23,11 +24,14 @@ export const AppProvider = ({ children } : AppProviderProps) => {
         }
     > 
         <ErrorBoundary FallbackComponent={ErrorFallback}>
-            <ThemeProvider>
-                <Router>
-                    {children}
-                </Router>
-            </ThemeProvider>
+            <QueryClientProvider client={queryClient}>
+                <ThemeProvider>
+                    <Router>
+                        {children}
+                    </Router>
+                </ThemeProvider>
+            </QueryClientProvider>
+            
         </ErrorBoundary>
 
     </React.Suspense>

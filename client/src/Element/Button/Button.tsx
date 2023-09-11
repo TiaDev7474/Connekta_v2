@@ -2,7 +2,7 @@ import React from 'react'
 import './Button.scss'
 import { Link, To } from 'react-router-dom';
 
-type ButtonPros = {
+export interface IButtonPros {
     label?: string,
     type?:string,
     Icon?: React.ReactNode,
@@ -10,19 +10,20 @@ type ButtonPros = {
     className?:string
 
 }
-export const Button: React.FC<ButtonPros> = ({ label , Icon = "", type ,to=''}) => {
+export const Button: React.FC<IButtonPros> = ({ label , Icon = "", type ,to=''}) => {
    const className = type ==="primary" ? "btn btn-primary": "btn btn-secondary"
    console.log("render",)
   return (
-    <button
-        className={className}
-    >
-      <Link 
-          className='link'
-          to={to}>
-      { label }
-         {Icon }
-      </Link>
-    </button>
+    <Link 
+       
+        to={to}>
+        <button
+            className={`${className} link`}
+        >
+          { label }
+            {Icon }
+        
+        </button>
+    </Link>
   )
 }

@@ -13,8 +13,8 @@ export const NavBar = () => {
                   <SwitchButton />
               </div>
               <div className='nav-btn'>
-                   <Button label='Register' type='primary' to="auth/register"/>
-                   <Button label='Login' type='secondary' to='auth/login' />
+                   <Button label='Create an account' type='primary' to="/auth/register"/>
+                   <Button label='Login' type='secondary' to='/auth/login' />
               </div>  
          </div> 
      </nav>

@@ -29,7 +29,7 @@ export const LoginForm = () => {
        onSubmit: async(values:IFormData) => {
              console.log(values)
        }
-  })
+  })        
   return (
      <React.Fragment>
           <form className='form'>

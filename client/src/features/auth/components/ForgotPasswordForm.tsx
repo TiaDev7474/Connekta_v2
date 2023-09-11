@@ -14,7 +14,6 @@ export const ForgotPasswordForm = () => {
         }
    })
     return (
-   
          <form className='form' >
              <WrapperField name='email' formik={formik}>
                 <InputField 
@@ -25,8 +24,7 @@ export const ForgotPasswordForm = () => {
                 />
              </WrapperField>
              <Button type='primary' label='Reset password' />
-         </form>
-     
+         </form>  
  )
 }
 

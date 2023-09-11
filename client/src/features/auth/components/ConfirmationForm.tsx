@@ -21,7 +21,7 @@ const ConfirmationForm = () => {
                        type='numeric'
                        name='digits'
                        formik={formik}
-                       placeholder='0 0 0 0 0 0'
+                       placeholder='000000'
                  />
               </WrapperField>
                <span className='layout-link'>

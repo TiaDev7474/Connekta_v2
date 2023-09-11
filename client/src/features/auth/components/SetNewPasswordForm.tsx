@@ -36,7 +36,6 @@ export const SetNewPasswordForm = () => {
                          formik={formik}
                          Icon={<MdPassword />}
                     />
-
                </WrapperField>
              <Button type='primary' label='Reset password' />
          </form>

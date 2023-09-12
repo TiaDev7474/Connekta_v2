@@ -20,7 +20,8 @@ export const Button: React.FC<IButtonPros> = ({ label , Icon = "", type ,to=''})
         <button
             className={`${className} link`}
         >
-          { label }
+           <span>  { label }</span>
+        
             {Icon }
         
         </button>

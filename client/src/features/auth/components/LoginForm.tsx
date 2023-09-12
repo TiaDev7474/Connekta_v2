@@ -6,10 +6,10 @@ import { InputField } from '@/Element/Form/InputField';
 import { MdEmail, MdLock } from 'react-icons/md';
 import './styles/LoginForm.scss'
 import { ActionButton } from '@/Element/Button/ActionButton';
-import { useLogin } from '@/hooks/useLogin';
-import { LoginResponse } from "@/features/auth/types/apiResponse"
-
+import { useLogin } from '@/features/auth/hooks/useLogin';
 import { useNavigate } from 'react-router-dom';
+import { useLocalstorage } from '@/hooks/useLocalstorage';
+import { useUserContext } from '@/hooks/useUserContext';
 
 
 
@@ -21,6 +21,8 @@ interface IFormData {
 
 export const LoginForm = () => {
      const { mutate:loginUser, isLoading, isError , error} = useLogin();
+     const { setItemToStorage  } = useLocalstorage();
+     const { loginFn } = useUserContext()
      const navigate = useNavigate()
      const formik = useFormik({
           initialValues:{
@@ -33,14 +35,16 @@ export const LoginForm = () => {
                password:Yup.string().required('Password is required to log in')
           }),
           onSubmit: async(values:IFormData) => {
-               console.log(values);
                loginUser(values,{
                     onSuccess:(response) =>{
-                         console.log(response)
-                    
-                         // if(response.token){
-                         //      navigate("/user")
-                         // }
+                          if(response.status === 201){
+                              //todo:implement user state storage 
+                              if(response.data.data?.token){
+                                   setItemToStorage('token',response.data.data.token);
+                                   loginFn() ;
+                              }
+                              navigate("/user");
+                          }
                     }
                })
           }
@@ -51,7 +55,7 @@ export const LoginForm = () => {
      <React.Fragment>
           {
                isError && (
-                    <span>{error.message}</span>
+                    <span>{error.status}</span>
                )
           }
           <form className='form' onSubmit={formik.handleSubmit}>

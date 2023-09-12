@@ -5,6 +5,7 @@ import { ErrorBoundary } from 'react-error-boundary';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { queryClient } from '@/lib/react-query';
 import { QueryClientProvider } from 'react-query';
+import { UserContextProvider } from '@/context/context.user';
 const ErrorFallback = () => {
     return (
          <div>Fallback error goes here</div>
@@ -25,11 +26,13 @@ export const AppProvider = ({ children } : AppProviderProps) => {
     > 
         <ErrorBoundary FallbackComponent={ErrorFallback}>
             <QueryClientProvider client={queryClient}>
-                <ThemeProvider>
-                    <Router>
-                        {children}
-                    </Router>
-                </ThemeProvider>
+                <UserContextProvider>
+                    <ThemeProvider>
+                        <Router>
+                            {children}
+                        </Router>
+                    </ThemeProvider>
+                </UserContextProvider>
             </QueryClientProvider>
             
         </ErrorBoundary>

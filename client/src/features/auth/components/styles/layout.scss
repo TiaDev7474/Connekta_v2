@@ -8,7 +8,7 @@
     padding: 2rem;
     margin-top: 3rem;
     background: var(---primaryColor);
-    box-shadow: 0 3px 3px 0px rgba($color: #3d3c3cc4, $alpha: 0.1);
+    box-shadow: 0 3px 3px 0px rgba($color: #938d8dc4, $alpha: 0.1);
     border-radius:1rem ;
     -webkit-border-radius:1rem ;
     -moz-border-radius:1rem ;
@@ -16,16 +16,20 @@
     -o-border-radius:1rem ;
 }
 .layout-brand{
+     width: 100%;
      display: flex;
+     padding-bottom: 2rem;
      flex-direction: column;
-     justify-content: center;
+     justify-content: space-around;
      align-items: center;
      line-height: 120%;
+    
 }
 .layout-paragraph{
      color: var(---paragraphColor);
       font-weight: 300;
       font-size: 18px ;
+      padding: 1rem;
 }
 .layout-icon{
     display: inline-block;

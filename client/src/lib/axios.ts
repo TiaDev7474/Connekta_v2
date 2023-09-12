@@ -1,5 +1,5 @@
-import axios from 'axios'
 
+import axios from 'axios'
 
 let url;
 if(import.meta.env.MODE === "development"){
@@ -12,8 +12,17 @@ export const apiClient = axios.create({
 })
 
 apiClient.interceptors.request.use( async (config) => {
-    apiClient.defaults.headers.common['Authorization'] = await localStorage.getItem('token');
-    return config
+
+    const token = await localStorage.getItem('token');
+
+    // Log the token to check if it's retrieved correctly
+    console.log('Retrieved token:', token);
+  
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+    
 }, (error) =>{
      return Promise.reject(error)
 }

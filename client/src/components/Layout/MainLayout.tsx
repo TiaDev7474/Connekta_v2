@@ -1,21 +1,29 @@
 import React from 'react'
+import { NavHeader } from '../NavHeader/NavHeader'
+import { AsideNav } from '../AsideNav/AsideNav'
 
 type MainLayoutProps = {
     children: React.ReactNode
 }
 export const MainLayout = ({ children }: MainLayoutProps) => {
   return (
-    <div>
-        <button className='button'>
-              Button 
-        </button>
-        <button className='button secondary'>
-              Button 
-        </button>
-        <h1 className='h1'>
-             Bienvenue sur connekta
-        </h1>
-        { children }
+    <div className='w-full px-[5%]'>
+        <header>
+            <NavHeader />
+        </header>
+         <main className='flex justify-between'>
+            <aside>
+                <AsideNav />
+            </aside>
+            <section>
+               { children }
+            </section>
+            <aside>
+
+            </aside>
+         </main>
+        
+       
     </div>
   )
 }

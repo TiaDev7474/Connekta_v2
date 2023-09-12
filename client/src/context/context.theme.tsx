@@ -7,16 +7,16 @@ export type ThemeContextType = {
      toggleTheme: () => void
 }
 
-type ThemeProviderProps = {
-    children: React.ReactNode
+export type ProviderProps = {
+    children: React.ReactNode;
 }
     
 
 export const themeContext = createContext<ThemeContextType>({} as ThemeContextType);
 
 
-export const ThemeProvider:React.FC<ThemeProviderProps> = ({ children }) => {
-    const [currentTheme , setTheme] = useState<themeType>("dark");
+export const ThemeProvider:React.FC<ProviderProps> = ({ children }) => {
+    const [currentTheme , setTheme] = useState<themeType>("light");
     const toggleTheme = useCallback(() => {
             if(currentTheme === 'light'){
                 setTheme("dark")

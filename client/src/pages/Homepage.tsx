@@ -1,11 +1,22 @@
 import { MainLayout } from "@/components/Layout"
-import { Suspense } from "react"
-import { Outlet } from "react-router-dom"
+// import { useUser } from "@/features/auth/hooks/useUser"
+// import { useUserContext } from "@/hooks/useUserContext"
+import { Suspense} from "react"
+// import  { Navigate } from "react-router-dom"
+import { Outlet} from "react-router-dom"
 
+const Homepage  = () => {
+    // const { isAuthentified } = useUserContext();
 
-const Homepage = () => {
+    // const {isError,  error } = useUser();
+   
     return (
         <MainLayout>
+            {/* {
+                !isAuthentified  && (
+                  <Navigate to="/auth/login" replace={true} />
+            )
+            } */}
             <Suspense 
                 fallback={
                     <div>
@@ -13,6 +24,7 @@ const Homepage = () => {
                     </div>
                 }
             >
+                
                 <Outlet/>
             </Suspense>  
         </MainLayout>

@@ -1,16 +1,20 @@
 
 export interface ApiResponse<T> {
+    status:number,
+    statusText: string
     data:{
         status: "Success" | "failed",
         message?: string,
         data?: T,
-        token?: string,
-        refreshToken?: string
+       
     }
    
 }
+// export interface  iServerResponse{
 
-export interface IUser {
+// }
+
+export  interface IUser {
     _id: string,
     username:string,
     email:string,
@@ -19,11 +23,20 @@ export interface IUser {
     isVerified: boolean,
     lastActivity: Date,
 }
-
-export interface LoginResponse extends ApiResponse<IUser>{
-    token: string,
-    refreshToken: string
+export interface IUserToken{
+     token?: string,
+     refreshToken?: string
 }
-export interface RegisterResponse extends ApiResponse<null>{
+export  interface IUserEmail{
     userEmail: string
+}
+
+export interface LoginResponse extends ApiResponse<IUserToken>{
+   
+}
+export interface UserInfoResponse extends ApiResponse<IUser>{
+
+}
+export interface RegisterResponse extends ApiResponse<IUserEmail>{
+   
 }

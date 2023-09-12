@@ -8,7 +8,7 @@ interface IActionButton extends IButtonPros {
 
 export const ActionButton: React.FC<IActionButton> = ({ label , Icon = "", type , state}) => {
    const className = type ==="primary" ? "btn btn-primary": "btn btn-secondary"
-   console.log("render",)
+   console.log(state)
   return (
    
         <button

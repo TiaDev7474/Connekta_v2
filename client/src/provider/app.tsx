@@ -5,6 +5,7 @@ import { ErrorBoundary } from 'react-error-boundary';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { queryClient } from '@/lib/react-query';
 import { QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools} from 'react-query/devtools'
 import { UserContextProvider } from '@/context/context.user';
 const ErrorFallback = () => {
     return (
@@ -33,10 +34,11 @@ export const AppProvider = ({ children } : AppProviderProps) => {
                         </Router>
                     </ThemeProvider>
                 </UserContextProvider>
+                <ReactQueryDevtools initialIsOpen={false} />
             </QueryClientProvider>
-            
+             {/* */}
         </ErrorBoundary>
-
+        
     </React.Suspense>
   )
 }

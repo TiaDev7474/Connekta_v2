@@ -6,7 +6,7 @@ import { DropDown } from "../DropDown/DropDown"
 
 type ProfileInfoProps = {
     avatar: string,
-    username:string,    
+    username?:string,    
 }
 export const ProfileInfo = (props: ProfileInfoProps) => {
     const [isVisible, setIsVisible ] = useState<boolean>(false)

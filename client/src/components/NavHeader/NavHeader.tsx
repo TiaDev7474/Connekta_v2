@@ -3,9 +3,11 @@ import logo from '@/assets/logo.png';
 import avatar from '@/assets/avatar.jpg';
 import { Notification } from '@/Element/Notification/Notification';
 import { ProfileInfo } from '../ProfileInfo/ProfileInfo';
+import { useUserContext } from '@/hooks/useUserContext';
 
 export const NavHeader = () => {
-  
+  const { currentUser } = useUserContext();
+  const userAvatar = currentUser?.avatar?.length as number < 0 ? currentUser?.avatar[0]: avatar
   return (
     <nav className='w-full flex py-5'>
         <div className=' flex items-center '>
@@ -21,8 +23,8 @@ export const NavHeader = () => {
                 {/* <SwitchButton/> */}
             </div>
             <ProfileInfo  
-                 avatar={avatar} 
-                 username='Riry Nomenjanahary'
+                 avatar={userAvatar as string} 
+                 username={currentUser?.username}
             
             />
             

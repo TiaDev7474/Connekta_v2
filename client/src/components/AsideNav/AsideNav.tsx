@@ -1,6 +1,6 @@
 import { LinkItem } from "@/Element/Link/Link"
 import { useState } from "react"
-import { MdHome, MdMessage, MdOutlineDoubleArrow, MdPeople, MdVideoCall } from "react-icons/md"
+import { MdHome, MdKeyboardDoubleArrowLeft, MdMessage, MdOutlineDoubleArrow, MdPeople, MdVideoCall } from "react-icons/md"
 
 const AsideNavLinks = [
     {
@@ -36,7 +36,7 @@ export const AsideNav = () => {
               <span 
                     onClick={toggleSlideNav}
                    className=" cursor-pointer p-2 rounded-full bg-[#01010111]">
-                   <MdOutlineDoubleArrow />
+                   { isNavSlided ? <MdOutlineDoubleArrow /> : <MdKeyboardDoubleArrowLeft/>}
               </span>
          </div>
          <ul className="flex flex-col gap-2">

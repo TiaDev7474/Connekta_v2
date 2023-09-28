@@ -7,7 +7,7 @@ import { useUserContext } from '@/hooks/useUserContext';
 
 export const NavHeader = () => {
   const { currentUser } = useUserContext();
-  const userAvatar = currentUser?.avatar?.length as number < 0 ? currentUser?.avatar[0]: avatar
+  const userAvatar = currentUser?.avatar?.length as number < 0 ?  avatar : currentUser?.avatar[0];
   return (
     <nav className='w-full flex py-5'>
         <div className=' flex items-center '>

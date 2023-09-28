@@ -8,7 +8,7 @@ export const Avatar = (props: AvatarProps) => {
   return (
     <div className='w-full h-full cursor-pointer'>
         <span className={`w-${props.size} h-${props.size}`}>
-            <img src={props.imageSrc} className="rounded-full" style={{ width:`${props.size}rem`}} />
+            <img src={props.imageSrc} className="rounded-full" style={{ width:`${props.size}rem`, height:`${props.size + 0.2}rem`}} />
         </span>
     </div>
   )
